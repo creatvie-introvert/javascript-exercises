@@ -1,16 +1,11 @@
-const removeFromArray = function(array, remove) {
-    let newArray = [];
+const removeFromArray = function(array, ...remove) {
+    let result = array.filter(element => !remove.includes(element));
 
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] !== remove) {
-            newArray.push(array[i]);
-        }
-    }
-
-    return newArray;
+    return result;
 };
 
 removeFromArray([1, 2, 3, 4], 3);
+removeFromArray([1, 2, 3, 4], 3, 2);
 
 // Do not edit below this line
 module.exports = removeFromArray;
